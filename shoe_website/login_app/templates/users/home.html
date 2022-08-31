@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% include 'includes/slider.html' %}
+
+<div style="border: 1px solid transparent; height: 300px; margin-top: 10px; background-color: yellow; box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;">
+    <h4 style="font-size: 60px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-align: center; margin-top: 125px;"><i>15% OFF IF YOU SUBSCRIBE</i> <a href="{% url 'login' %}" type="button" style="margin-left: 20px; background-color: yellow; text-decoration: none; color: black; border: 3px solid black; padding: 10px; text-align: left;"><i>SUBSCRIBE</i></a></h4>
+    
+</div>
+
+<div style="border: 1px solid black; height: 525px; margin-top: 10px;">
+    <img src="https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/~regional~IND~others~KOP~Aug+2022~Fresh+Drip~24th-Aug-Fresh-Drip-Banner-Refresh-Aug-.jpg/fmt/jpg/fmt/png">
+
+</div>
+
+{% endblock %}

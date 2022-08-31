@@ -1,0 +1,27 @@
+{% load static %}
+<nav>
+    <div class="navTop">
+        <div class="container-sm" id="logo">
+          <a href="{% url 'dashboard' %}">
+          <img src="{% static 'img/sneakers.png' %}" alt="No img">
+          </a>
+        </div>
+        <div id="cart_div">
+          <a id="cart" href="{% url 'cart' %}">&#128722;</a>
+        </div>
+    </div>
+    <div id="nav_bottom" class="container-sm">
+      <a class="menuItem links" href="{% url 'dashboard' %}">HOME</a>
+      <a class="menuItem links" href="{% url 'collections' %}">COLLECTIONS</a>
+      <a class="menuItem links" href="mailto:someone@example.com">CONTACT</a>
+      <a class="menuItem links" href="#">TRENDING</a>
+
+      <p style="margin-right: 10px; margin-left: 70px; margin-top: 15px;">Welcome, {{request.user.username|default:'Guest'}}!</p>
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'logout' %}" style="text-decoration: none; color:red;">Logout</a>
+      {% else %}
+      <a href="{% url 'login' %}" style="text-decoration: none; color:yellowgreen;">Login</a>
+      {% endif %}
+    </div>
+    
+  </nav>

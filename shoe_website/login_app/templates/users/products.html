@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container" style="border: 1px solid transparent; margin-top: 5px; margin-left: 5px; width: 250px; height: 50px;">
+    <a style="text-decoration: none;" href="{% url 'dashboard' %}">Home /</a>
+    <a style="text-decoration: none;" href="{% url 'collections' %}">Collections /</a>
+    <a style="text-decoration: none;" href="{% url 'collectionsview' category.slug %}">{{category.slug}}</a>
+</div>
+<div class="container" style="border: 1px solid transparent; height: 400px; padding: 10px; margin-left: 10px;">
+{% for item in products %}
+    <div class="card-body" style="height: 340px; width:250px; border: 1px solid lightgray; float: left; margin-left: 50px; margin-top: -5px; padding: 10px;">
+        <img class="card-img-top" src="{{item.product_image.url}}" alt="Card image cap">
+        <h5 class="card-title" style="font-size: 15px;">{{item.name}}</h5>
+        <!-- <p class="card-text">{{item.description}}</p> -->
+        <span style="color: red; font-size: 15px;"><s>₹{{item.original_price | stringformat:'d'}}</s></span>
+        <span style="font-size: 15px;"><i><b>₹{{item.selling_price | stringformat:'d'}}</b></i></span>
+        <br>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}
